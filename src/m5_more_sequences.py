@@ -7,8 +7,8 @@ for ITERATING through SEQUENCES, including:
   -- The FIND pattern (via LINEAR SEARCH)
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Tyler Foster.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -59,6 +59,11 @@ def run_test_sum_radii():
 
 
 def sum_radii(circles):
+    radii = 0
+    for k in range(len(circles)):
+        radii = radii + circles[k].radius
+    return radii
+
     """
     What comes in:
       -- a sequence of rg.Circle objects
@@ -75,7 +80,7 @@ def sum_radii(circles):
       :type circles:  list[rg.Circle]    or tuple(rg.Circle)
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # Note: No fair using "slices" on ANY of these problems,
@@ -129,6 +134,12 @@ def run_test_count_last_n_odds():
 
 
 def count_last_n_odds(integers, n):
+    count = 0
+    for k in range(len(integers)- n, len(integers)):
+        if integers[k] % 2 == 1:
+            count = count + 1
+
+    return count
     """
     What comes in:
       -- a sequence of integers
@@ -149,7 +160,7 @@ def count_last_n_odds(integers, n):
       :type n:        int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -201,6 +212,12 @@ def run_test_index_of_first_negative():
 
 
 def index_of_first_negative(numbers):
+    for k in range(len(numbers)):
+        if numbers[k] < 0:
+            return k
+    return -1
+
+
     """
     What comes in:
       -- a sequence of numbers
@@ -223,7 +240,7 @@ def index_of_first_negative(numbers):
       :type numbers: list[float]   or tuple[float]
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -264,6 +281,11 @@ def run_test_contains_an_a():
 
 
 def contains_an_a(s):
+    for k in range(len(s)):
+        if s[k] == 'a':
+            return True
+
+    return False
     """
     What comes in:
       -- a string
